@@ -14,10 +14,24 @@
   fi
 } &!
 
+
+function center-text() {
+colcount=$((`tput cols` - 1))
+  sed  -e :a -e "s/^.\{1,$colcount\}$/ & /;ta"
+}
+
+center-text <<-EOF
+ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM
+COPYRIGHT 2075-2077 ROBCO INDUSTRIES
+EOF
+
+echo –`hostname`– | center-text
+
 # Print a random, hopefully interesting, adage.
 if (( $+commands[fortune] )); then
   if [[ -t 0 || -t 1 ]]; then
-    fortune -s
+    fortune -s | center-text
     print
   fi
 fi
+
