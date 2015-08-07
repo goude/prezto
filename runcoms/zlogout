@@ -1,13 +1,7 @@
-#
-# Executes commands at logout.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-# Print the message.
-cat <<-EOF
-
-Thank you. Come again!
-  -- Dr. Apu Nahasapeemapetilon
-EOF
+# Print a random, hopefully interesting, adage.
+if (( $+commands[fortune] )); then
+  if [[ -t 0 || -t 1 ]]; then
+    fortune
+    print
+  fi
+fi

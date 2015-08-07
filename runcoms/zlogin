@@ -14,18 +14,18 @@
   fi
 } &!
 
-
+# Print a centered logon message
 function center-text() {
 colcount=$((`tput cols` - 1))
   sed  -e :a -e "s/^.\{1,$colcount\}$/ & /;ta"
 }
 
-center-text <<-EOF
-ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM
-COPYRIGHT 2075-2077 ROBCO INDUSTRIES
-EOF
-
-echo –`hostname`– | center-text
+if (( $+commands[adage] )); then
+  if [[ -t 0 || -t 1 ]]; then
+    adage | center-text
+    print
+  fi
+fi
 
 # Print a random, hopefully interesting, adage.
 if (( $+commands[fortune] )); then
