@@ -30,7 +30,6 @@ zstyle ':prezto:load' pmodule \
   'fasd' \
   'git' \
   'osx' \
-  'syntax-highlighting' \
   'ssh' \
   'history' \
   'directory' \
@@ -38,6 +37,8 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'tmux' \
+  'syntax-highlighting' \
+  'history-substring-search' \
   'prompt'
 
 #
