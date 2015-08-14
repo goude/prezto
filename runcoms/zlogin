@@ -16,8 +16,10 @@
 
 # Print a centered logon message
 function center-text() {
-colcount=$((`tput cols` - 1))
+  #colcount=$((`tput cols` - 1))
+  colcount=$COLUMNS
   sed  -e :a -e "s/^.\{1,$colcount\}$/ & /;ta"
+  unset colcount
 }
 
 if (( $+commands[adage] )); then
