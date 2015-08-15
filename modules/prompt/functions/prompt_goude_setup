@@ -50,7 +50,7 @@ function prompt_goude_git_info {
       alias typeset='typeset -g'
       source "$_prompt_goude_precmd_async_data"
       RPROMPT+='${git_info:+${(e)git_info[status]}}'
-      RPROMPT+='$(git config --get user.email)'
+      RPROMPT+=' $(git config --get user.email)'
       unalias typeset
     fi
 
