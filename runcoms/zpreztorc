@@ -32,14 +32,15 @@ zstyle ':prezto:load' pmodule \
   'ssh' \
   'history' \
   'directory' \
-  'spectrum' \
-  'gnu-utility' \
   'utility' \
   'completion' \
+  'spectrum' \
   'tmux' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
+
+  #'gnu-utility' \ # SLOWS down
 
 #
 # Editor
