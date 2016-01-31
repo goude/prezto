@@ -50,7 +50,8 @@ function prompt_goude_git_info {
       alias typeset='typeset -g'
       source "$_prompt_goude_precmd_async_data"
       RPROMPT+='${git_info:+${(e)git_info[status]}}'
-      RPROMPT+=" %B%F{8}$(git config --get user.email | sed 's/\(.\).*\(@.\).*/\1\2/')%f%b"
+      RPROMPT+=" %B%F{8}$(get_extended_prompt_string)%f%b"
+      #RPROMPT+=" %B%F{8}$(git config --get user.email | sed 's/\(.\).*\(@.\).*/\1\2/')%f%b"
       unalias typeset
     fi
 
